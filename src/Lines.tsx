@@ -5,13 +5,13 @@ import isEqual from 'lodash.isequal';
 import Selection from './Selection';
 
 type LinesProps = {
+  id?: string;
   size?: number;
   strokeWidth?: number;
   orientation?: string;
   shapeRendering?: string;
   stroke?: string;
   background?: string;
-  id?: string;
   components?: {
     defs?: Function | string;
     g?: Function | string;
@@ -25,22 +25,6 @@ type LinesProps = {
 type LinesState = {
   pattern: React.ReactNode
 }
-
-// const defaultComponents = {
-//   defs: "defs",
-//   g: "g",
-//   circle: "circle",
-//   rect: "rect",
-//   pattern: "pattern",
-//   path: "path"
-// }
-
-// const getDefaultProps = (props: LinesProps): LinesProps => {
-//   if (!props.components) {
-//     props.components = defaultComponents;
-//   }
-//   return props
-// }
 
 export default class Lines extends React.Component<LinesProps, LinesState> {
   state: LinesState = {

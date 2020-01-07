@@ -14,13 +14,13 @@ type PathTexture =
   | 'hexagons'
 
 type PathsProps = {
+  id?: string;
   size?: number;
   strokeWidth?: number;
   d?: PathTexture | Function;
   shapeRendering?: string;
   stroke?: string;
   background?: string;
-  id?: string;
   components?: {
     defs?: Function | string;
     g?: Function | string;

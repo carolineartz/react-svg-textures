@@ -5,12 +5,12 @@ import isEqual from 'lodash.isequal';
 import Selection from './Selection';
 
 type CirclesProps = {
+  id?: string;
   size?: number;
   strokeWidth?: number;
   stroke?: string;
   fill?: string;
   background?: string;
-  id?: string;
   complement?: boolean;
   radius?: number;
   components?: {
