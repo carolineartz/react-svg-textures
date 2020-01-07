@@ -2,11 +2,20 @@ module.exports = {
   type: 'react-component',
   npm: {
     esModules: true,
-    umd: {
-      global: 'ReactSvgTextures',
-      externals: {
-        react: 'React'
+    umd: false,
+  },
+  webpack: {
+    config(config) {
+      config.entry = {
+        demo: ['./demo/src/index.tsx'],
       }
-    }
-  }
+      config.resolve.extensions = ['.ts', '.tsx', '.js', '.jsx']
+      config.module.rules.push({
+        'test': /\.tsx?$/,
+        'loader': 'ts-loader',
+      })
+
+      return config
+    },
+  },
 }

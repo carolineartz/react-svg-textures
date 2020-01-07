@@ -21,23 +21,34 @@
   ],
   "scripts": {
     "build": "nwb build-react-component",
+    "build:ts": "tsc",
+    "build:all": "npm-run-all copy:css-to-lib build:ts",
     "clean": "nwb clean-module && nwb clean-demo",
-    "start": "nwb serve-react-demo",
+    "prepublishOnly": "npm run build:ts&&npm run build&&npm run build",
+    "start": "nwb serve-react-demo --port 3333",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "prepare": "npm run build"
   },
   "dependencies": {
+    "@types/lodash.camelcase": "^4.3.6",
+    "@types/lodash.isequal": "^4.5.5",
+    "@types/prop-types": "^15.7.3",
+    "@types/react-dom": "^16.9.4",
+    "@types/uuid": "^3.4.6",
     "lodash.camelcase": "^4.3.0",
     "lodash.isequal": "^4.5.0",
     "prop-types": "^15.6.0",
-    "textures": "^1.2.0"
+    "textures": "^1.2.0",
+    "uuid": "^3.3.3"
   },
   "peerDependencies": {
     "react": "16.x"
   },
   "devDependencies": {
+    "@types/react": "^16.9.17",
     "babel-eslint": "^8.2.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -47,9 +58,17 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
-    "nwb": "0.21.x",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4",
+    "antd": "^3.20.6",
+    "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^3.1.0",
+    "node-sass": "^4.12.0",
+    "nwb": "0.23.x",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1"
   },
   "author": "Finn Fitzsimons <fitzsimons.finn@gmail.com>",
   "license": "MIT",
