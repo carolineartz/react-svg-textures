@@ -14,22 +14,20 @@
     "react-component"
   ],
   "files": [
-    "css",
     "es",
     "lib",
     "umd"
   ],
   "scripts": {
-    "build": "nwb build-react-component",
+    "build": "yarn clean && yarn build:ts && yarn build:component",
+    "build:component": "nwb build-react-component --no-demo --no-prototype",
     "build:ts": "tsc",
-    "build:all": "npm-run-all copy:css-to-lib build:ts",
     "clean": "nwb clean-module && nwb clean-demo",
-    "prepublishOnly": "npm run build:ts&&npm run build&&npm run build",
+    "prepublishOnly": "yarn build && yarn build:component",
     "start": "nwb serve-react-demo --port 3333",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server",
-    "prepare": "npm run build"
+    "test:watch": "nwb test-react --server"
   },
   "dependencies": {
     "@types/lodash.camelcase": "^4.3.6",
@@ -48,7 +46,6 @@
   },
   "devDependencies": {
     "@types/react": "^16.9.17",
-    "antd": "^3.20.6",
     "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^8.2.1",
     "enzyme": "^3.3.0",
@@ -62,12 +59,11 @@
     "nwb": "0.23.x",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.4"
   },
-  "author": "Finn Fitzsimons <fitzsimons.finn@gmail.com>",
+  "author": "",
+  "homepage": "",
   "license": "MIT",
-  "repository": "https://github.com/finnfiddle/react-svg-textures"
+  "repository": ""
 }

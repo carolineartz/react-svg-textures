@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
     "outDir": "build/lib",
-    "module": "commonjs",
+    "declarationDir": "build/lib/src",
+    "declaration": true,               // todo: make this true when all .js files have been converted to .ts/.tsx
+    "module": "es2015",
     "target": "es5",
-    "lib": ["es2015", "es2016", "es2017", "dom", "esnext", "dom.iterable"],
+    "lib": ["es5", "es6", "es7", "es2017", "dom"],
     "sourceMap": true,
     "allowJs": true,                    // todo: make this false when all .js files have been converted to .ts/.tsx
     "jsx": "react",
     "moduleResolution": "node",
-    "downlevelIteration": true,
-    "emitDecoratorMetadata": true,
     "rootDirs": ["src"],
     "forceConsistentCasingInFileNames": true,
     //    "noImplicitReturns": true,    // todo: enable this when all .js files have been converted to .ts/.tsx
@@ -19,7 +19,6 @@
     "removeComments": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "declaration": false,               // todo: make this true when all .js files have been converted to .ts/.tsx
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "esModuleInterop": true
