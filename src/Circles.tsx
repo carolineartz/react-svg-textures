@@ -27,22 +27,6 @@ type CirclesState = {
   pattern: React.ReactNode
 }
 
-// const defaultComponents = {
-//   defs: "defs",
-//   g: "g",
-//   circle: "circle",
-//   rect: "rect",
-//   pattern: "pattern",
-//   path: "path"
-// }
-
-// const getDefaultProps = (props: CirclesProps): CirclesProps => {
-//   if (!props.components) {
-//     return {}
-//   }
-//   return props
-// }
-
 export default class Circles extends React.Component<CirclesProps, CirclesState> {
   state: CirclesState = {
     pattern: <div />
