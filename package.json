@@ -1,5 +1,5 @@
 {
-  "name": "react-svg-textures",
+  "name": "react-svg-textures-typescript",
   "version": "1.4.7",
   "description": "Textures.js ported to React. Fully isomorphic.",
   "main": "lib/index.js",
